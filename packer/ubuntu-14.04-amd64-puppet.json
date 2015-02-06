@@ -30,9 +30,9 @@
       "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
       "guest_os_type": "Ubuntu_64",
       "http_directory": "http",
-      "iso_checksum": "4d94f6111b8fe47da94396180ce499d8c0bb44f3",
+      "iso_checksum": "{{user `ubuntu_sha1sum`}}",
       "iso_checksum_type": "sha1",
-      "iso_url": "{{user `mirror`}}/14.04/ubuntu-14.04-server-amd64.iso",
+      "iso_url": "{{user `mirror`}}/{{user `ubuntu_version`}}/ubuntu-{{user `ubuntu_version`}}-{{user `ubuntu_flavour`}}-amd64.iso",
       "output_directory": "packer-ubuntu-14.04-amd64-puppet-virtualbox",
       "shutdown_command": "echo 'vagrant'|sudo -S shutdown -P now",
       "ssh_password": "vagrant",
@@ -87,9 +87,9 @@
       "guest_os_type": "ubuntu-64",
       "headless": true,
       "http_directory": "http",
-      "iso_checksum": "4d94f6111b8fe47da94396180ce499d8c0bb44f3",
+      "iso_checksum": "{{user `ubuntu_sha1sum`}}",
       "iso_checksum_type": "sha1",
-      "iso_url": "{{user `mirror`}}/14.04/ubuntu-14.04-server-amd64.iso",
+      "iso_url": "{{user `mirror`}}/{{user `ubuntu_version`}}/ubuntu-{{user `ubuntu_version`}}-{{user `ubuntu_flavour`}}-amd64.iso",
       "output_directory": "packer-ubuntu-14.04-amd64-puppet-vmware",
       "shutdown_command": "echo 'vagrant'|sudo -S shutdown -P now",
       "ssh_password": "vagrant",
@@ -134,7 +134,10 @@
     }
   ],
   "variables": {
-    "puppet_version": "3.4.3-1",
-    "mirror": "http://releases.ubuntu.com"
+    "puppet_version": "latest",
+    "mirror": "http://releases.ubuntu.com",
+    "ubuntu_version": "14.04.1",
+    "ubuntu_flavour": "server",
+    "ubuntu_sha1sum": "401c5f6666fe2879ac3a9a3247b487723410cf88"
   }
 }
