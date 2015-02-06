@@ -134,7 +134,7 @@
     }
   ],
   "variables": {
-    "puppet_version": "latest",
+    "puppet_version": "3.7.4",
     "mirror": "http://releases.ubuntu.com",
     "ubuntu_version": "14.04.1",
     "ubuntu_flavour": "server",
