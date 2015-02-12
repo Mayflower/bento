@@ -108,7 +108,7 @@
   ],
   "post-processors": [
     {
-      "output": "../builds/{{.Provider}}/ubuntu-14.04-puppet{{user `puppet_version`}}.box",
+      "output": "../builds/{{.Provider}}/ubuntu-{{user `ubuntu_version`}}-puppet{{user `puppet_version`}}.box",
       "type": "vagrant"
     }
   ],
