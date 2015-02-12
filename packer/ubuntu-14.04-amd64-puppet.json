@@ -115,7 +115,7 @@
   "provisioners": [
     {
       "environment_vars": [
-        "PUPPET_VERSION={{user `puppet_version`}}"
+        "PUPPET_VERSION={{user `puppet_version`}}{{user `puppet_package_append`}}"
       ],
       "execute_command": "echo 'vagrant'|{{.Vars}} sudo -S -E bash '{{.Path}}'",
       "scripts": [
@@ -135,6 +135,7 @@
   ],
   "variables": {
     "puppet_version": "3.7.4",
+    "puppet_package_append": "-1puppetlabs1",
     "mirror": "http://releases.ubuntu.com",
     "ubuntu_version": "14.04.1",
     "ubuntu_flavour": "server",
